@@ -22,17 +22,16 @@ This application demonstrates key OOP principles, extensibility, and clean archi
 
 ---
 
-## 📸 Screenshot
+## Screenshot
 
 Below is a sample screenshot from the running app:
 
-![Quantum Bookstore Screenshot](images/console-output.png)
+![Quantum Bookstore Screenshot](Images/console-output.png)
 
-> Place your actual console screenshot in the `images` folder and name it `console-output.png` (or update the filename if different).
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Clone the repository or copy the source code.
 2. Open the solution in Visual Studio or VS Code.

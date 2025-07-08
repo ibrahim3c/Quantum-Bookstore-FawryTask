@@ -24,5 +24,16 @@
 
                 return book.BuyBook(info);
         }
+
+        public void DisplayAllBooks()
+        {
+            Console.WriteLine("Displaying all books in inventory...");
+
+            foreach (var book in books)
+            {
+                book.Display();
+            }
+        }
+
     }
 }

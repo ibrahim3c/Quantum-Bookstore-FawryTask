@@ -22,6 +22,8 @@
             return (DateTime.Now.Year - PublishedDate.Year) >= years;
         }
 
+        public abstract void Display();
+
         public abstract decimal BuyBook(IBuyingInfo BuyingInfo);
 
     }
@@ -40,6 +42,11 @@
             // Ship this book
             return this.Price;
         }
+        public override void Display()
+        {
+            Console.WriteLine($"Quantum book store: [Type=PaperBook] ISBN={ISBN}, Title={Title}, Published={PublishedDate:yyyy-MM-dd}, Price={Price} EGP, Quantity={Quantity}");
+        }
+
 
         public void ReduceQunatity(int quantity)
         {
@@ -57,6 +64,12 @@
         }
         public string FileType {  get; }
 
+        public override void Display()
+        {
+            Console.WriteLine($"Quantum book store: [Type=E-Book] ISBN={ISBN}, Title={Title}, Published={PublishedDate:yyyy-MM-dd}, Price={Price} EGP, FileType={FileType}");
+        }
+
+
         public override decimal BuyBook(IBuyingInfo BuyingInfo)
         {
             // sending this book using email service
@@ -68,6 +81,10 @@
         public DemoBook(string iSBN, string title, DateTime publishedDate, decimal price): base(iSBN, title, publishedDate, price)
         {
             
+        }
+        public override void Display()
+        {
+            Console.WriteLine($"Quantum book store: [Type=DemoBook] ISBN={ISBN}, Title={Title}, Published={PublishedDate:yyyy-MM-dd}, Price={Price} EGP (Not for Sale)");
         }
 
         public override decimal BuyBook(IBuyingInfo BuyingInfo)

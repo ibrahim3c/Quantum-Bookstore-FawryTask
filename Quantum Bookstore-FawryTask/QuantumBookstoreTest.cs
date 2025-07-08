@@ -1,6 +1,4 @@
-﻿using System.Net.NetworkInformation;
-
-namespace Quantum_Bookstore_FawryTask
+﻿namespace Quantum_Bookstore_FawryTask
 {
     internal class QuantumBookstoreTest
     {
@@ -23,6 +21,8 @@ namespace Quantum_Bookstore_FawryTask
             inventory.AddBook(eBook);
             inventory.AddBook(demoBook);
             inventory.AddBook(outdatedBook);
+
+            Console.WriteLine("Books added successfully.\n");
         }
 
         public  void RemoveOutdatedBooks()
@@ -33,14 +33,25 @@ namespace Quantum_Bookstore_FawryTask
 
         public  void BuyPaperBook()
         {
-            Console.WriteLine("Buying paper book...");
-            var info = new BuyingPaperBookInfo
+            try
             {
-                Quantity = 2,
-                Address = "123 Book Street"
-            };
+                Console.WriteLine("Buying paper book...");
+                var info = new BuyingPaperBookInfo
+                {
+                    Quantity = 2,
+                    Address = "123 Book Street"
+                };
 
-            inventory.BuyBook("B1", info);
+                var amountPaid = inventory.BuyBook("B1", info);
+
+                Console.WriteLine($"Paper book purchased. Total paid: {amountPaid}\n");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
         public  void BuyEBook()
@@ -51,7 +62,9 @@ namespace Quantum_Bookstore_FawryTask
                 Email = "user@example.com"
             };
 
-            inventory.BuyBook("B2", info);
+            var amountPaid = inventory.BuyBook("B2", info);
+
+            Console.WriteLine($"eBook purchased. Total paid: {amountPaid}\n");
         }
 
         public  void BuyDemoBook()
@@ -68,6 +81,11 @@ namespace Quantum_Bookstore_FawryTask
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        internal void DisplayAllBooks()
+        {
+            inventory.DisplayAllBooks();
         }
     }
 }

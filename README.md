@@ -26,8 +26,7 @@ This application demonstrates key OOP principles, extensibility, and clean archi
 
 Below is a sample screenshot from the running app:
 
-![Quantum Bookstore Screenshot](Images/console-output.png)
-
+![Quantum Bookstore Screenshot](https://github.com/ibrahim3c/Quantum-Bookstore-FawryTask/blob/master/Quantum%20Bookstore-FawryTask/Images/console-output.png)
 
 ---
 
